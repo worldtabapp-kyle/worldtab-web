@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WorldTab — Multi-Currency Budget Tracker</title>
+  <meta name="description" content="Track your income and expenses across 28 currencies with live exchange rates. Your data stays on your device by default." />
+  <link rel="icon" href="icon.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+    a { color: #FF6B00; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header.hero {
+      background: linear-gradient(180deg, #FF6B00 0%, #FF8A3D 100%);
+      color: #fff;
+      padding: 48px 16px 64px;
+      text-align: center;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      margin-bottom: 16px;
+    }
+    header.hero h1 { font-size: 30px; font-weight: 800; margin-bottom: 10px; }
+    header.hero p.tagline { font-size: 16px; opacity: 0.95; max-width: 480px; margin: 0 auto 28px; }
+
+    .store-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .store-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1d1d1f;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .store-btn:hover { text-decoration: none; opacity: 0.88; }
+    .store-btn .icon { font-size: 20px; line-height: 1; }
+    .store-btn .text { text-align: left; line-height: 1.25; }
+    .store-btn .text small { display: block; font-size: 10px; opacity: 0.8; font-weight: 400; }
+
+    main { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+    .screenshot-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: -40px;
+      margin-bottom: 48px;
+    }
+    .screenshot-wrap img {
+      width: 220px;
+      max-width: 70vw;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      border: 6px solid #1d1d1f;
+    }
+
+    section.features {
+      margin-bottom: 56px;
+    }
+    section.features h2, section.premium h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .feature-card .emoji { font-size: 26px; margin-bottom: 10px; }
+    .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .feature-card p { font-size: 13px; color: #555; }
+
+    section.premium {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 24px;
+      margin-bottom: 56px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .premium-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px 20px;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .premium-list li { font-size: 14px; padding-left: 22px; position: relative; }
+    .premium-list li::before { content: "✓"; color: #FF6B00; font-weight: 800; position: absolute; left: 0; }
+    .premium-price { text-align: center; font-size: 13px; color: #86868b; }
+
+    section.privacy-note {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 56px;
+      font-size: 14px;
+      color: #555;
+      background: #fff8f5;
+      border-left: 3px solid #FF6B00;
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #86868b;
+      padding: 24px 16px 48px;
+    }
+    footer .links { margin-bottom: 10px; }
+    footer .links a { margin: 0 8px; }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #1c1c1e; color: #f5f5f7; }
+      .feature-card, section.premium { background: #2c2c2e; box-shadow: none; }
+      .feature-card p { color: #b0b0b5; }
+      section.privacy-note { background: #3a2010; color: #f5f5f7; }
+      footer { color: #98989e; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img class="logo" src="icon.png" alt="WorldTab icon" />
+    <h1>WorldTab</h1>
+    <p class="tagline">Track your money in 28 currencies with live exchange rates. Your data stays on your device by default.</p>
+    <div class="store-badges">
+      <a class="store-btn" href="https://apps.apple.com/app/id6794569884">
+        <span class="icon">🍎</span>
+        <span class="text"><small>Download on the</small>App Store</span>
+      </a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab">
+        <span class="icon">▶</span>
+        <span class="text"><small>Get it on</small>Google Play</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="screenshot-wrap">
+    <img src="hero-screenshot.png" alt="WorldTab home screen showing multi-currency balances" />
+  </div>
+
+  <main>
+    <section class="features">
+      <h2>What makes WorldTab different</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="emoji">💱</div>
+          <h3>28 currencies, live rates</h3>
+          <p>Every entry converts automatically with up-to-date exchange rates.</p>
+        </div>
+        <div class="feature-card">
+          <div class="emoji">📊</div>
+          <h3>One unified dashboard</h3>
+          <p>See all your spending converted to any currency at a glance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="emoji">📈</div>
+          <h3>Charts &amp; trends</h3>
+          <p>Beautiful charts and 6-month spending trends, plus a calendar view.</p>
+        </div>
+        <div class="feature-card">
+          <div class="emoji">🎯</div>
+          <h3>Budgets that stick</h3>
+          <p>Monthly and per-category budgets with progress bars.</p>
+        </div>
+        <div class="feature-card">
+          <div class="emoji">🌍</div>
+          <h3>8 languages</h3>
+          <p>English, 中文, 日本語, 한국어, Français, Deutsch, Italiano, Español.</p>
+        </div>
+        <div class="feature-card">
+          <div class="emoji">🌓</div>
+          <h3>Full dark mode</h3>
+          <p>Looks great day or night, and adapts to your device automatically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="premium">
+      <h2>WorldTab Premium</h2>
+      <ul class="premium-list">
+        <li>Multiple ledgers for work, travel, personal</li>
+        <li>Recurring auto-entries for rent, salary, subscriptions</li>
+        <li>Per-category budgets</li>
+        <li>AI smart import from any CSV</li>
+        <li>Photo notes for receipts</li>
+        <li>App Lock with passcode/biometrics</li>
+        <li>Hide balance for private screenshots</li>
+        <li>Cloud backup across devices</li>
+      </ul>
+      <p class="premium-price">$2.99/month or $19.99/year. Cancel anytime.</p>
+    </section>
+
+    <section class="privacy-note">
+      No account required to use the app. All entries are stored locally on your device by default — sign in only if you want cloud backup.
+    </section>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="delete-account.html">Delete Account</a>
+      <a href="delete-data.html">Delete Data</a>
+      <a href="mailto:worldtab.app@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 Kyle Zhu · WorldTab</p>
+  </footer>
+</body>
+</html>
