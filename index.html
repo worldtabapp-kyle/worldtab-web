@@ -108,30 +108,12 @@
       background: #000;
     }
 
-    section.features {
-      margin-bottom: 56px;
-    }
-    section.features h2, section.premium h2 {
+    section.premium h2 {
       text-align: center;
       font-size: 22px;
       font-weight: 800;
       margin-bottom: 28px;
     }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .feature-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-    .feature-card .emoji { font-size: 26px; margin-bottom: 10px; }
-    .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .feature-card p { font-size: 13px; color: #555; }
-
     section.showcase { margin-bottom: 56px; }
     .showcase-row {
       display: flex;
@@ -206,8 +188,7 @@
 
     @media (prefers-color-scheme: dark) {
       body { background: #1c1c1e; color: #f5f5f7; }
-      .feature-card, section.premium { background: #2c2c2e; box-shadow: none; }
-      .feature-card p { color: #b0b0b5; }
+      section.premium { background: #2c2c2e; box-shadow: none; }
       .showcase-text p { color: #b0b0b5; }
       section.privacy-note { background: #3a2010; color: #f5f5f7; }
       footer { color: #98989e; }
@@ -290,27 +271,6 @@
           <p class="kicker">MONTHLY OVERVIEW</p>
           <h3>Every month, at a glance</h3>
           <p>Income, expenses, and balance for every month, instantly comparable.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="features">
-      <h2>What makes WorldTab different</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <div class="emoji">📊</div>
-          <h3>One unified dashboard</h3>
-          <p>See all your spending converted to any currency at a glance.</p>
-        </div>
-        <div class="feature-card">
-          <div class="emoji">🌍</div>
-          <h3>8 languages</h3>
-          <p>English, 中文, 日本語, 한국어, Français, Deutsch, Italiano, Español.</p>
-        </div>
-        <div class="feature-card">
-          <div class="emoji">🌓</div>
-          <h3>Full dark mode</h3>
-          <p>Looks great day or night, and adapts to your device automatically.</p>
         </div>
       </div>
     </section>
