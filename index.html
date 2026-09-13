@@ -79,6 +79,35 @@
       border: 6px solid #1d1d1f;
     }
 
+    /* Demo video. Vertical 9:16, so it is width-capped rather than left to
+       fill the 960px column -- unconstrained it renders as a very tall, very
+       narrow strip on desktop. No autoplay and preload="none": the file is
+       ~3MB and nobody on cellular should pay for it without asking. */
+    .demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .demo .kicker {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #FF6B00;
+      margin-bottom: 8px;
+    }
+    .demo h2 { font-size: 19px; font-weight: 800; margin-bottom: 16px; }
+    .demo video {
+      width: 300px;
+      max-width: 72vw;
+      height: auto;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      display: block;
+      background: #000;
+    }
+
     section.features {
       margin-bottom: 56px;
     }
@@ -207,6 +236,21 @@
   </div>
 
   <main>
+    <section class="demo">
+      <p class="kicker">SEE IT IN ACTION</p>
+      <h2>A minute with WorldTab</h2>
+      <!-- width/height carry the intrinsic ratio so the browser reserves the
+           right space before the poster loads, instead of reflowing. -->
+      <video
+        src="worldtab-demo.mp4"
+        poster="worldtab-demo-poster.jpg"
+        width="720" height="1280"
+        controls
+        preload="none"
+        playsinline
+      ></video>
+    </section>
+
     <section class="showcase">
       <div class="showcase-row">
         <img src="show-currency.png" alt="WorldTab currency and exchange rates screen" />
