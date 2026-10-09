@@ -68,17 +68,18 @@
     <p class="app-name">WORLDTAB</p>
     <h1>Privacy Policy</h1>
   </header>
-  <p class="updated">Last updated: July 2, 2026</p>
+  <p class="updated">Last updated: October 9, 2026</p>
 
   <div class="card">
     <p>This Privacy Policy explains how Kyle Zhu ("we", "us", "our") handles your information when you use the WorldTab mobile app ("App"). By using the App you agree to this Policy.</p>
 
     <h2>1. Information We Collect</h2>
     <ul>
-      <li><strong>Account information</strong> (if you register): email address, and optionally a nickname and avatar emoji.</li>
-      <li><strong>Your financial records:</strong> income and expense entries, categories, currencies, ledger names, and notes you enter.</li>
+      <li><strong>Account information</strong> (if you sign in): your email address, a nickname (the one you set before signing in; otherwise your Apple or Google account name, or the part of your email before the @; you can change it in the App), and an avatar emoji.</li>
+      <li><strong>Your financial records:</strong> income and expense entries you enter (amount, currency, category, date, note, payment method), ledger names, and the categories, budgets and recurring-entry rules you set up.</li>
       <li><strong>Receipt photos</strong> (optional Premium feature): photos you choose to attach to a transaction, stored in Supabase cloud storage.</li>
-      <li><strong>Feedback content:</strong> text you submit via "Feedback", and your email address (if signed in) so we can reply to you.</li>
+      <li><strong>Subscription record</strong> (if you subscribe): the store purchase details needed to verify Premium (product, platform, expiry date, renewal status and a purchase token), stored with your account.</li>
+      <li><strong>Feedback content:</strong> text you submit via "Feedback", and your email address (if signed in) so we can reply to you, together with your app language, level and points, and whether you have Premium.</li>
       <li><strong>Avatar:</strong> only an emoji character you choose — we do not access your camera roll or camera (except for the receipt photo feature, and only when you actively choose to use it).</li>
       <li><strong>Device and diagnostic data:</strong> app version, device model, OS version, and crash logs used to fix bugs.</li>
       <li><strong>Install attribution data:</strong> a device identifier (the Google Advertising ID on Android; the vendor identifier (IDFV) on iOS — we do not request the IDFA and show no tracking permission prompt), the install source, app version, and coarse region, used to tell which advertising channel an install came from.</li>
@@ -89,7 +90,8 @@
     <ul>
       <li>To provide App features (bookkeeping, statistics, currency conversion).</li>
       <li>To create and secure your account.</li>
-      <li>To sync your data across devices when you enable cloud sync (Premium).</li>
+      <li>When you sign in, to back up your records to your account so they can be restored after you switch phones, reinstall or sign out; with Premium, to keep them in sync across your devices.</li>
+      <li>To produce aggregate usage statistics (for example, how many signed-in accounts recorded entries in a given week). These use only the time each entry first reached our servers, not the content of your records.</li>
       <li>To process subscriptions via Apple App Store or Google Play, and to verify subscription status.</li>
       <li>To respond to your feedback and support requests, and fix bugs.</li>
       <li>To use an AI service to parse CSV files you upload into structured bookkeeping entries (Smart Import feature, only triggered when you actively use it).</li>
@@ -99,8 +101,9 @@
 
     <h2>3. Data Storage and Retention</h2>
     <ul>
-      <li>All entries are stored <strong>locally on your device</strong> by default.</li>
-      <li>If you enable cloud sync (Premium), data is additionally stored on servers operated by Supabase, Inc. (<a href="https://supabase.com" target="_blank">supabase.com</a>), located in the United States.</li>
+      <li>If you use the App without an account, all entries are stored <strong>only on your device</strong>.</li>
+      <li>If you sign in, your entries, ledgers, categories, payment methods, budgets and recurring-entry rules are also backed up to servers operated by Supabase, Inc. (<a href="https://supabase.com" target="_blank">supabase.com</a>) in the United States, together with the time each entry first reached our servers. Premium receipt photos are stored there too.</li>
+      <li>When you delete an entry while signed in, it disappears from that device at once. Our server keeps the entry, marked as deleted (as soon as your device is online), so it never comes back in a restore and, with Premium, your other devices remove it the next time they open the App. It is erased completely when you delete your account. To have deleted entries erased sooner, email <a href="mailto:support@worldtab.app">support@worldtab.app</a> (we will first check that none of your other devices still holds the entry).</li>
       <li>Account data is retained while your account is active. Upon account deletion, data is permanently removed within <strong>30 days</strong>, unless retention is required by law.</li>
     </ul>
 
@@ -113,6 +116,8 @@
       <li>With Anthropic PBC (Claude API) to parse CSV file content you actively upload for Smart Import; this content is not used to train models.</li>
       <li>With AppsFlyer Ltd. (<a href="https://appsflyer.com" target="_blank">appsflyer.com</a>) for the install attribution data described above, to measure advertising performance.</li>
       <li>With Functional Software, Inc. (Sentry, <a href="https://sentry.io" target="_blank">sentry.io</a>) for crash and error diagnostics, to locate and fix bugs.</li>
+      <li>With Vercel Inc., which hosts the service we use to verify App Store purchases (purchase details only).</li>
+      <li>Exchange rates are downloaded from api.frankfurter.dev. Like any website, it sees your device's IP address, but no account or bookkeeping data is sent to it.</li>
       <li>When required by applicable law or to protect our legal rights.</li>
     </ul>
 
@@ -122,8 +127,8 @@
     <h2>6. Your Rights</h2>
     <p>You may at any time:</p>
     <ul>
-      <li>Access and export your data (Settings → Data &amp; Backup → Export CSV).</li>
-      <li>Correct your profile (Settings → Profile).</li>
+      <li>Get a copy of your data: Premium members can export their entries as CSV (Settings → Data &amp; Backup → Export CSV), and anyone can email <a href="mailto:support@worldtab.app">support@worldtab.app</a> for a free copy of everything we hold about them.</li>
+      <li>Correct your profile (Settings → tap your profile card at the top → Account).</li>
       <li>Delete your account and all associated data (Settings → Account → Delete Account).</li>
       <li>Contact us for other requests: <a href="mailto:support@worldtab.app">support@worldtab.app</a>.</li>
     </ul>
@@ -132,12 +137,12 @@
     <p>If you are located in the European Economic Area (EEA), you have additional rights under the General Data Protection Regulation (GDPR):</p>
     <ul>
       <li>Right of access, rectification, and erasure ("right to be forgotten").</li>
-      <li>Right to data portability (export CSV).</li>
+      <li>Right to data portability (a free copy of your data on request, or CSV export in the App for Premium members).</li>
       <li>Right to restrict or object to processing.</li>
       <li>Right to withdraw consent at any time (where processing is based on consent).</li>
       <li>Right to lodge a complaint with your local supervisory authority.</li>
     </ul>
-    <p>The legal bases for processing are: contract performance (operating the App), legitimate interests (security, bug fixes), and consent (optional account creation). We do not transfer data outside the EEA without appropriate safeguards (Supabase's Standard Contractual Clauses apply).</p>
+    <p>The legal bases for processing are: contract performance (operating the App), legitimate interests (security, bug fixes, aggregate usage statistics, and measuring advertising performance), and consent (optional account creation). We do not transfer data outside the EEA without appropriate safeguards (Supabase's Standard Contractual Clauses apply).</p>
 
     <h2>8. Canada (PIPEDA)</h2>
     <p>We handle personal information in accordance with the Personal Information Protection and Electronic Documents Act (PIPEDA). You may request access to or correction of your personal information by contacting <a href="mailto:support@worldtab.app">support@worldtab.app</a>.</p>
