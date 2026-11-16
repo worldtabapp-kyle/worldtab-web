@@ -68,7 +68,7 @@
     <p class="app-name">WORLDTAB</p>
     <h1>Privacy Policy</h1>
   </header>
-  <p class="updated">Last updated: October 16, 2026</p>
+  <p class="updated">Last updated: November 8, 2026</p>
 
   <div class="card">
     <p>This Privacy Policy explains how Kyle Zhu ("we", "us", "our") handles your information when you use the WorldTab mobile app ("App"). By using the App you agree to this Policy.</p>
@@ -78,11 +78,12 @@
       <li><strong>Account information</strong> (if you sign in): your email address, a nickname (the one you set before signing in; otherwise your Apple or Google account name, or the part of your email before the @; you can change it in the App), and an avatar emoji.</li>
       <li><strong>Your financial records:</strong> income and expense entries you enter (amount, currency, category, date, note, payment method), ledger names, and the categories, budgets and recurring-entry rules you set up.</li>
       <li><strong>Receipt photos</strong> (optional Premium feature, also available during the free trial): photos you choose to attach to a transaction, stored in Supabase cloud storage.</li>
+      <li><strong>AI receipt reading</strong> (optional Premium feature, also available during the free trial): a receipt photo you choose to have read is sent to an AI service to read the amounts, date, categories and tax, and is discarded once read; we do not keep the photo. You check what was read, and only what you confirm is saved as entries. To cap usage, we count how many receipts each account reads per day (the count only), and delete those counts after 30 days.</li>
       <li><strong>Subscription record</strong> (if you subscribe): the store purchase details needed to verify Premium (product, platform, expiry date, renewal status and a purchase token), stored with your account.</li>
       <li><strong>Free trial start:</strong> when your 14-day free Premium trial began, kept on your device and, if you sign in, with your account too, so that reinstalling or switching devices does not restart it.</li>
       <li><strong>Anonymous usage counts:</strong> the App reports totals of a few events, such as finishing or skipping the first-run guide, logging a first entry, opening the Premium page and buying, each with the date, app version, platform, free/trial/paid status and a range for how long the app has been installed (e.g. "2–3 days"). The counts table stores no account, device identifier, IP address or bookkeeping content, so a count cannot be traced to a person or device. You can turn this off in Settings → About; turning it off also deletes counts not yet sent.</li>
       <li><strong>Feedback content:</strong> text you submit via "Feedback", and your email address (if signed in) so we can reply to you, together with your app language, level and points, and whether you have Premium.</li>
-      <li><strong>Avatar:</strong> only an emoji character you choose — we do not access your camera roll or camera (except for the receipt photo feature, and only when you actively choose to use it).</li>
+      <li><strong>Avatar:</strong> only an emoji character you choose — we do not access your camera roll or camera (except for the receipt photo and AI receipt reading features, and only when you actively choose to use them).</li>
       <li><strong>Device and diagnostic data:</strong> app version, device model, OS version, and crash logs used to fix bugs.</li>
       <li><strong>Install attribution data:</strong> a device identifier (the Google Advertising ID on Android; the vendor identifier (IDFV) on iOS — we do not request the IDFA and show no tracking permission prompt), the install source, app version, and coarse region, used to tell which advertising channel an install came from.</li>
       <li>We do <strong>not</strong> collect precise location, contacts, or browsing history.</li>
@@ -98,6 +99,7 @@
       <li>To process subscriptions via Apple App Store or Google Play, and to verify subscription status.</li>
       <li>To respond to your feedback and support requests, and fix bugs.</li>
       <li>To use an AI service to parse CSV files you upload into structured bookkeeping entries (Smart Import feature, only triggered when you actively use it).</li>
+      <li>To use an AI service to read a receipt photo you take or choose (AI receipt reading, only triggered when you actively use it, and only after you have agreed the first time).</li>
       <li>To measure advertising performance: to know which channel an install came from, so we can judge where to keep advertising.</li>
     </ul>
     <p>We do not use your bookkeeping content for advertising and do not sell it to third parties. The attribution data above is used only to measure advertising performance and contains none of your records.</p>
@@ -105,6 +107,7 @@
     <h2>3. Data Storage and Retention</h2>
     <ul>
       <li>If you use the App without an account, all entries are stored <strong>only on your device</strong>.</li>
+      <li>Reminders and the weekly summary are created and shown by your device itself; their content does not pass through our servers.</li>
       <li>If you sign in, your entries, ledgers, categories, payment methods, budgets and recurring-entry rules are also backed up to servers operated by Supabase, Inc. (<a href="https://supabase.com" target="_blank">supabase.com</a>) in the United States, together with the time each entry first reached our servers. Premium receipt photos are stored there too.</li>
       <li>When you delete an entry while signed in, it disappears from that device at once. Our server keeps the entry, marked as deleted (as soon as your device is online), so it never comes back in a restore and, with Premium, your other devices remove it the next time they open the App. It is erased completely when you delete your account. To have deleted entries erased sooner, email <a href="mailto:support@worldtab.app">support@worldtab.app</a> (we will first check that none of your other devices still holds the entry).</li>
       <li>Account data is retained while your account is active. Upon account deletion, data is permanently removed within <strong>30 days</strong>, unless retention is required by law.</li>
@@ -116,7 +119,7 @@
       <li>With Supabase, Inc. for cloud storage, authentication, receipt photo storage, and storing the anonymous usage counts (under a data processing agreement).</li>
       <li>With Apple Inc. / Google LLC to process subscription payments and verify subscription status.</li>
       <li>With Resend (<a href="https://resend.com" target="_blank">resend.com</a>) to deliver the feedback content you submit to our inbox.</li>
-      <li>With Anthropic PBC (Claude API) to parse CSV file content you actively upload for Smart Import; this content is not used to train models.</li>
+      <li>With Anthropic PBC (Claude API) to parse CSV file content you actively upload for Smart Import, and to read receipt photos you choose to have read by AI; this content is not used to train models.</li>
       <li>With AppsFlyer Ltd. (<a href="https://appsflyer.com" target="_blank">appsflyer.com</a>) for the install attribution data described above, to measure advertising performance.</li>
       <li>With Functional Software, Inc. (Sentry, <a href="https://sentry.io" target="_blank">sentry.io</a>) for crash and error diagnostics, to locate and fix bugs.</li>
       <li>With Vercel Inc., which hosts the service we use to verify App Store purchases (purchase details only).</li>
