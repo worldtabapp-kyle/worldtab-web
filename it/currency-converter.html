@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convertitore di valuta: un importo in 28 valute | WorldTab</title>
+  <meta name="description" content="Convertitore di valuta gratuito: inserisci un importo una volta e vedilo in 28 valute, con tassi aggiornati ogni giorno. EUR, USD, GBP, CHF, JPY e altre.">
+  <link rel="canonical" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/currency-converter">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/currency-converter">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/it/currency-converter">
+  <meta property="og:title" content="Convertitore di valuta: un importo in 28 valute | WorldTab">
+  <meta property="og:description" content="Convertitore di valuta gratuito: inserisci un importo una volta e vedilo in 28 valute, con tassi aggiornati ogni giorno. EUR, USD, GBP, CHF, JPY e altre.">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Convertitore di valuta", "url": "https://worldtab.app/it/currency-converter", "inLanguage": "it", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "Convertitore di valuta gratuito: inserisci un importo una volta e vedilo in 28 valute, con tassi aggiornati ogni giorno. EUR, USD, GBP, CHF, JPY e altre.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "it", "mainEntity": [{"@type": "Question", "name": "Quanto sono aggiornati i tassi?", "acceptedAnswer": {"@type": "Answer", "text": "Sono i tassi di riferimento pubblicati dalla Banca centrale europea ogni giorno lavorativo; la data è indicata sopra. TWD, AED e VND, che la BCE non pubblica, arrivano da ExchangeRate-API e sono aggiornati anch'essi ogni giorno. Non sono quotazioni in tempo reale."}}, {"@type": "Question", "name": "Perché la mia banca mostra un importo diverso?", "acceptedAnswer": {"@type": "Answer", "text": "Banche e circuiti delle carte usano un proprio tasso e spesso aggiungono commissioni, quindi l'importo sull'estratto conto può differire un po' dal tasso di riferimento."}}, {"@type": "Question", "name": "Posso tenere traccia delle spese in più valute?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. WorldTab registra ogni spesa nella valuta in cui hai pagato e mostra tutti i totali nella tua valuta, conservando il tasso del giorno della spesa."}}]}]}</script>
+</head>
+<body data-tool="converter">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/it/currency-converter" aria-current="page">Convertitore di valuta</a><a href="/it/spending-calculator">Calcolatore di spese</a></nav>
+    <label><span class="sr">Lingua</span><select onchange="location.href=this.value"><option value="/currency-converter">English</option><option value="/zh/currency-converter">中文</option><option value="/ja/currency-converter">日本語</option><option value="/ko/currency-converter">한국어</option><option value="/fr/currency-converter">Français</option><option value="/de/currency-converter">Deutsch</option><option value="/it/currency-converter" selected>Italiano</option><option value="/es/currency-converter">Español</option></select></label>
+  </header>
+  <main>
+    <h1>Convertitore di valuta</h1>
+    <p class="sub">Inserisci un importo una volta e vedilo in tutte le 28 valute.</p>
+    <section class="card">
+      <div class="conv-inputs">
+        <label class="field amount"><span>Importo</span><input id="wt-amount" inputmode="decimal" autocomplete="off" value="100"></label>
+        <label class="field cur"><span>Valuta</span><select id="wt-from"></select></label>
+      </div>
+      <p class="hint">Tocca una valuta per convertire partendo da quella.</p>
+      <div id="wt-list" class="list"></div>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">Tassi di riferimento: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">Banca centrale europea</a> tramite <a href="https://frankfurter.dev" rel="noopener">Frankfurter</a>; TWD, AED e VND da <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>. Aggiornati una volta al giorno.</p>
+    <section class="cta">
+      <h2>Fallo in automatico per ogni spesa</h2>
+      <p>WorldTab è un&#x27;app di budget gratuita per iPhone e Android. Registra ogni spesa nella valuta in cui hai pagato: converte tutto nella tua valuta e conserva il tasso di quel giorno.</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>Scarica su</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>Disponibile su</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>Domande frequenti</h2>
+      <details><summary>Quanto sono aggiornati i tassi?</summary><p>Sono i tassi di riferimento pubblicati dalla Banca centrale europea ogni giorno lavorativo; la data è indicata sopra. TWD, AED e VND, che la BCE non pubblica, arrivano da ExchangeRate-API e sono aggiornati anch&#x27;essi ogni giorno. Non sono quotazioni in tempo reale.</p></details>
+      <details><summary>Perché la mia banca mostra un importo diverso?</summary><p>Banche e circuiti delle carte usano un proprio tasso e spesso aggiungono commissioni, quindi l&#x27;importo sull&#x27;estratto conto può differire un po&#x27; dal tasso di riferimento.</p></details>
+      <details><summary>Posso tenere traccia delle spese in più valute?</summary><p>Sì. WorldTab registra ogni spesa nella valuta in cui hai pagato e mostra tutti i totali nella tua valuta, conservando il tasso del giorno della spesa.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Termini di servizio</a><a href="mailto:support@worldtab.app">Contatti</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "EUR", "home_tag": "La tua valuta", "asof": "Tassi del {d}", "offline": "Non è stato possibile caricare i tassi di oggi: gli importi sono approssimativi.", "loading": "Caricamento dei tassi di oggi…", "amount_ph": "Importo", "cur_label": "Valuta", "note_ph": "Per cosa (facoltativo)", "remove": "Rimuovi", "by_cur": "Per valuta", "total": "Totale", "copy": "Copia il riepilogo", "copied": "Copiato", "copy_footer": "Tassi del {d} · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

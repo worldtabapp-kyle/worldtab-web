@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Currency Converter: One Amount in 28 Currencies | WorldTab</title>
+  <meta name="description" content="Free currency converter: type an amount once and see it in 28 currencies, with exchange rates updated daily. USD, EUR, JPY, KRW, CNY, GBP, CAD and more.">
+  <link rel="canonical" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/currency-converter">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/currency-converter">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/currency-converter">
+  <meta property="og:title" content="Currency Converter: One Amount in 28 Currencies | WorldTab">
+  <meta property="og:description" content="Free currency converter: type an amount once and see it in 28 currencies, with exchange rates updated daily. USD, EUR, JPY, KRW, CNY, GBP, CAD and more.">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Currency converter", "url": "https://worldtab.app/currency-converter", "inLanguage": "en", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "Free currency converter: type an amount once and see it in 28 currencies, with exchange rates updated daily. USD, EUR, JPY, KRW, CNY, GBP, CAD and more.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "How up to date are these rates?", "acceptedAnswer": {"@type": "Answer", "text": "They are the reference rates the European Central Bank publishes every working day, and the date above shows which day. TWD, AED and VND, which the ECB does not publish, come from ExchangeRate-API and are also updated daily. They are not live market prices."}}, {"@type": "Question", "name": "Why does my bank show a different amount?", "acceptedAnswer": {"@type": "Answer", "text": "Banks and card networks use their own exchange rate and often add a fee, so the amount on your statement can differ a little from a reference rate."}}, {"@type": "Question", "name": "Can I track spending in several currencies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. WorldTab records each expense in the currency you paid and shows every total in your currency, keeping the rate from the day you spent."}}]}]}</script>
+</head>
+<body data-tool="converter">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/currency-converter" aria-current="page">Currency converter</a><a href="/spending-calculator">Spending calculator</a></nav>
+    <label><span class="sr">Language</span><select onchange="location.href=this.value"><option value="/currency-converter" selected>English</option><option value="/zh/currency-converter">中文</option><option value="/ja/currency-converter">日本語</option><option value="/ko/currency-converter">한국어</option><option value="/fr/currency-converter">Français</option><option value="/de/currency-converter">Deutsch</option><option value="/it/currency-converter">Italiano</option><option value="/es/currency-converter">Español</option></select></label>
+  </header>
+  <main>
+    <h1>Currency converter</h1>
+    <p class="sub">Type an amount once and see it in all 28 currencies.</p>
+    <section class="card">
+      <div class="conv-inputs">
+        <label class="field amount"><span>Amount</span><input id="wt-amount" inputmode="decimal" autocomplete="off" value="100"></label>
+        <label class="field cur"><span>Currency</span><select id="wt-from"></select></label>
+      </div>
+      <p class="hint">Tap any currency to convert from it.</p>
+      <div id="wt-list" class="list"></div>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">Reference rates: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">European Central Bank</a> via <a href="https://frankfurter.dev" rel="noopener">Frankfurter</a>; TWD, AED and VND from <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>. Updated once a day.</p>
+    <section class="cta">
+      <h2>Do this for every expense, automatically</h2>
+      <p>WorldTab is a free budgeting app for iPhone and Android. Record each expense in the currency you paid; it converts everything to your currency and keeps the rate from that day.</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>Download on the</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>Get it on</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>Questions</h2>
+      <details><summary>How up to date are these rates?</summary><p>They are the reference rates the European Central Bank publishes every working day, and the date above shows which day. TWD, AED and VND, which the ECB does not publish, come from ExchangeRate-API and are also updated daily. They are not live market prices.</p></details>
+      <details><summary>Why does my bank show a different amount?</summary><p>Banks and card networks use their own exchange rate and often add a fee, so the amount on your statement can differ a little from a reference rate.</p></details>
+      <details><summary>Can I track spending in several currencies?</summary><p>Yes. WorldTab records each expense in the currency you paid and shows every total in your currency, keeping the rate from the day you spent.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="mailto:support@worldtab.app">Contact</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "USD", "home_tag": "Your currency", "asof": "Rates as of {d}", "offline": "Couldn't load today's rates, so these amounts are approximate.", "loading": "Loading today's rates…", "amount_ph": "Amount", "cur_label": "Currency", "note_ph": "What for (optional)", "remove": "Remove", "by_cur": "By currency", "total": "Total", "copy": "Copy summary", "copied": "Copied", "copy_footer": "Rates as of {d} · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

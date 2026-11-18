@@ -165,6 +165,15 @@
     .premium-list li::before { content: "✓"; color: #FF6B00; font-weight: 800; position: absolute; left: 0; }
     .premium-price { text-align: center; font-size: 13px; color: #86868b; }
 
+    section.tools { margin-bottom: 56px; text-align: center; }
+    section.tools .kicker { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: #FF6B00; margin-bottom: 8px; }
+    section.tools h2 { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
+    .tool-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; max-width: 700px; margin: 0 auto; text-align: left; }
+    .tool-card { display: block; background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); color: #1d1d1f; border-left: 4px solid #FF6B00; }
+    .tool-card:hover { text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+    .tool-card strong { display: block; font-size: 16px; margin-bottom: 4px; }
+    .tool-card span { font-size: 14px; color: #555; }
+
     section.privacy-note {
       text-align: center;
       max-width: 560px;
@@ -189,6 +198,8 @@
     @media (prefers-color-scheme: dark) {
       body { background: #1c1c1e; color: #f5f5f7; }
       section.premium { background: #2c2c2e; box-shadow: none; }
+      .tool-card { background: #2c2c2e; color: #f5f5f7; box-shadow: none; }
+      .tool-card span { color: #b0b0b5; }
       .showcase-text p { color: #b0b0b5; }
       section.privacy-note { background: #3a2010; color: #f5f5f7; }
       footer { color: #98989e; }
@@ -275,6 +286,15 @@
       </div>
     </section>
 
+    <section class="tools">
+      <p class="kicker">FREE TOOLS</p>
+      <h2>Try it in your browser</h2>
+      <div class="tool-cards">
+        <a class="tool-card" href="/currency-converter"><strong>Currency converter</strong><span>Type an amount once and see it in all 28 currencies.</span></a>
+        <a class="tool-card" href="/spending-calculator"><strong>Multi-currency spending calculator</strong><span>Add what you spent in any currency and see the total in yours.</span></a>
+      </div>
+    </section>
+
     <section class="premium">
       <h2>WorldTab Premium</h2>
       <ul class="premium-list">
@@ -297,6 +317,8 @@
 
   <footer>
     <div class="links">
+      <a href="/currency-converter">Currency Converter</a>
+      <a href="/spending-calculator">Spending Calculator</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="delete-account.html">Delete Account</a>

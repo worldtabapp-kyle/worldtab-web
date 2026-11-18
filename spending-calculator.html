@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Currency Spending Calculator: Total in Your Currency | WorldTab</title>
+  <meta name="description" content="Add expenses in any of 28 currencies and see the total in your own. For trips, studying abroad, shopping from overseas or bills in another currency. Free, runs in your browser.">
+  <link rel="canonical" href="https://worldtab.app/spending-calculator">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/spending-calculator">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/spending-calculator">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/spending-calculator">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/spending-calculator">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/spending-calculator">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/spending-calculator">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/spending-calculator">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/spending-calculator">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/spending-calculator">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/spending-calculator">
+  <meta property="og:title" content="Multi-Currency Spending Calculator: Total in Your Currency | WorldTab">
+  <meta property="og:description" content="Add expenses in any of 28 currencies and see the total in your own. For trips, studying abroad, shopping from overseas or bills in another currency. Free, runs in your browser.">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Multi-currency spending calculator", "url": "https://worldtab.app/spending-calculator", "inLanguage": "en", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "Add expenses in any of 28 currencies and see the total in your own. For trips, studying abroad, shopping from overseas or bills in another currency. Free, runs in your browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Which exchange rate is used?", "acceptedAnswer": {"@type": "Answer", "text": "Today's reference rate for every line. In the WorldTab app, each expense keeps the rate from the day you spent, so totals for past months don't shift when rates move."}}, {"@type": "Question", "name": "Is what I enter saved or sent anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "It is saved only in this browser, so it is still here next time. Nothing you enter is sent to us or anyone else."}}]}]}</script>
+</head>
+<body data-tool="calculator">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/currency-converter">Currency converter</a><a href="/spending-calculator" aria-current="page">Spending calculator</a></nav>
+    <label><span class="sr">Language</span><select onchange="location.href=this.value"><option value="/spending-calculator" selected>English</option><option value="/zh/spending-calculator">中文</option><option value="/ja/spending-calculator">日本語</option><option value="/ko/spending-calculator">한국어</option><option value="/fr/spending-calculator">Français</option><option value="/de/spending-calculator">Deutsch</option><option value="/it/spending-calculator">Italiano</option><option value="/es/spending-calculator">Español</option></select></label>
+  </header>
+  <main>
+    <h1>Multi-currency spending calculator</h1>
+    <p class="sub">Add what you spent in any currency and see the total in yours: a trip, a term abroad, shopping from overseas, or bills paid in another currency.</p>
+    <section class="card">
+      <label class="field home"><span>Total in</span><select id="wt-home"></select></label>
+      <div id="wt-rows" class="rows"></div>
+      <div class="row-actions"><button type="button" id="wt-add" class="btn add">+ Add an expense</button><button type="button" id="wt-clear" class="btn ghost">Clear all</button></div>
+      <div class="total-box"><span>Total</span><strong id="wt-total">—</strong><small id="wt-bycur"></small></div>
+      <div class="row-actions"><button type="button" id="wt-copy" class="btn">Copy summary</button></div>
+      <p class="local">What you enter stays in this browser. Nothing is sent anywhere.</p>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">Reference rates: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">European Central Bank</a> via <a href="https://frankfurter.dev" rel="noopener">Frankfurter</a>; TWD, AED and VND from <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>. Updated once a day.</p>
+    <section class="cta">
+      <h2>Do this for every expense, automatically</h2>
+      <p>WorldTab is a free budgeting app for iPhone and Android. Record each expense in the currency you paid; it converts everything to your currency and keeps the rate from that day.</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>Download on the</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>Get it on</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>Questions</h2>
+      <details><summary>Which exchange rate is used?</summary><p>Today&#x27;s reference rate for every line. In the WorldTab app, each expense keeps the rate from the day you spent, so totals for past months don&#x27;t shift when rates move.</p></details>
+      <details><summary>Is what I enter saved or sent anywhere?</summary><p>It is saved only in this browser, so it is still here next time. Nothing you enter is sent to us or anyone else.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="mailto:support@worldtab.app">Contact</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "USD", "home_tag": "Your currency", "asof": "Rates as of {d}", "offline": "Couldn't load today's rates, so these amounts are approximate.", "loading": "Loading today's rates…", "amount_ph": "Amount", "cur_label": "Currency", "note_ph": "What for (optional)", "remove": "Remove", "by_cur": "By currency", "total": "Total", "copy": "Copy summary", "copied": "Copied", "copy_footer": "Rates as of {d} · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Convertisseur de devises : un montant en 28 devises | WorldTab</title>
+  <meta name="description" content="Convertisseur de devises gratuit : saisissez un montant une fois et voyez-le dans 28 devises, avec des taux mis à jour chaque jour. EUR, USD, CAD, GBP, JPY et plus.">
+  <link rel="canonical" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/currency-converter">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/currency-converter">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/fr/currency-converter">
+  <meta property="og:title" content="Convertisseur de devises : un montant en 28 devises | WorldTab">
+  <meta property="og:description" content="Convertisseur de devises gratuit : saisissez un montant une fois et voyez-le dans 28 devises, avec des taux mis à jour chaque jour. EUR, USD, CAD, GBP, JPY et plus.">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Convertisseur de devises", "url": "https://worldtab.app/fr/currency-converter", "inLanguage": "fr", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "Convertisseur de devises gratuit : saisissez un montant une fois et voyez-le dans 28 devises, avec des taux mis à jour chaque jour. EUR, USD, CAD, GBP, JPY et plus.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "fr", "mainEntity": [{"@type": "Question", "name": "Les taux sont-ils à jour ?", "acceptedAnswer": {"@type": "Answer", "text": "Ce sont les taux de référence publiés chaque jour ouvré par la Banque centrale européenne ; la date est indiquée plus haut. TWD, AED et VND, que la BCE ne publie pas, viennent d'ExchangeRate-API et sont aussi mis à jour chaque jour. Ce ne sont pas des cours en temps réel."}}, {"@type": "Question", "name": "Pourquoi ma banque affiche-t-elle un autre montant ?", "acceptedAnswer": {"@type": "Answer", "text": "Les banques et les réseaux de cartes appliquent leur propre taux et ajoutent souvent des frais : le montant sur votre relevé peut donc différer un peu d'un taux de référence."}}, {"@type": "Question", "name": "Puis-je suivre des dépenses dans plusieurs devises ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. WorldTab enregistre chaque dépense dans la devise payée et affiche tous les totaux dans votre devise, en gardant le taux du jour de la dépense."}}]}]}</script>
+</head>
+<body data-tool="converter">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/fr/currency-converter" aria-current="page">Convertisseur de devises</a><a href="/fr/spending-calculator">Calculateur de dépenses</a></nav>
+    <label><span class="sr">Langue</span><select onchange="location.href=this.value"><option value="/currency-converter">English</option><option value="/zh/currency-converter">中文</option><option value="/ja/currency-converter">日本語</option><option value="/ko/currency-converter">한국어</option><option value="/fr/currency-converter" selected>Français</option><option value="/de/currency-converter">Deutsch</option><option value="/it/currency-converter">Italiano</option><option value="/es/currency-converter">Español</option></select></label>
+  </header>
+  <main>
+    <h1>Convertisseur de devises</h1>
+    <p class="sub">Saisissez un montant une fois et voyez-le dans les 28 devises.</p>
+    <section class="card">
+      <div class="conv-inputs">
+        <label class="field amount"><span>Montant</span><input id="wt-amount" inputmode="decimal" autocomplete="off" value="100"></label>
+        <label class="field cur"><span>Devise</span><select id="wt-from"></select></label>
+      </div>
+      <p class="hint">Touchez une devise pour convertir à partir d&#x27;elle.</p>
+      <div id="wt-list" class="list"></div>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">Taux de référence : <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">Banque centrale européenne</a> via <a href="https://frankfurter.dev" rel="noopener">Frankfurter</a> ; TWD, AED et VND : <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>. Mis à jour une fois par jour.</p>
+    <section class="cta">
+      <h2>Faites-le automatiquement pour chaque dépense</h2>
+      <p>WorldTab est une app de budget gratuite pour iPhone et Android. Notez chaque dépense dans la devise payée : elle convertit tout dans votre devise et garde le taux du jour.</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>Télécharger</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>Télécharger</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Les taux sont-ils à jour ?</summary><p>Ce sont les taux de référence publiés chaque jour ouvré par la Banque centrale européenne ; la date est indiquée plus haut. TWD, AED et VND, que la BCE ne publie pas, viennent d&#x27;ExchangeRate-API et sont aussi mis à jour chaque jour. Ce ne sont pas des cours en temps réel.</p></details>
+      <details><summary>Pourquoi ma banque affiche-t-elle un autre montant ?</summary><p>Les banques et les réseaux de cartes appliquent leur propre taux et ajoutent souvent des frais : le montant sur votre relevé peut donc différer un peu d&#x27;un taux de référence.</p></details>
+      <details><summary>Puis-je suivre des dépenses dans plusieurs devises ?</summary><p>Oui. WorldTab enregistre chaque dépense dans la devise payée et affiche tous les totaux dans votre devise, en gardant le taux du jour de la dépense.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">Politique de confidentialité</a><a href="/terms.html">Conditions d&#x27;utilisation</a><a href="mailto:support@worldtab.app">Contact</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "EUR", "home_tag": "Votre devise", "asof": "Taux du {d}", "offline": "Impossible de charger les taux du jour : ces montants sont approximatifs.", "loading": "Chargement des taux du jour…", "amount_ph": "Montant", "cur_label": "Devise", "note_ph": "Pour quoi (facultatif)", "remove": "Supprimer", "by_cur": "Par devise", "total": "Total", "copy": "Copier le résumé", "copied": "Copié", "copy_footer": "Taux du {d} · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

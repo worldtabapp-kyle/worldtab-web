@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculateur de dépenses multidevise : total dans votre devise | WorldTab</title>
+  <meta name="description" content="Ajoutez des dépenses dans 28 devises et voyez le total dans la vôtre. Pour un voyage, des études à l&#x27;étranger, des achats à l&#x27;étranger ou des factures en devise. Gratuit, tout se passe dans votre navigateur.">
+  <link rel="canonical" href="https://worldtab.app/fr/spending-calculator">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/spending-calculator">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/spending-calculator">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/spending-calculator">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/spending-calculator">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/spending-calculator">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/spending-calculator">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/spending-calculator">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/spending-calculator">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/spending-calculator">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/fr/spending-calculator">
+  <meta property="og:title" content="Calculateur de dépenses multidevise : total dans votre devise | WorldTab">
+  <meta property="og:description" content="Ajoutez des dépenses dans 28 devises et voyez le total dans la vôtre. Pour un voyage, des études à l&#x27;étranger, des achats à l&#x27;étranger ou des factures en devise. Gratuit, tout se passe dans votre navigateur.">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Calculateur de dépenses multidevise", "url": "https://worldtab.app/fr/spending-calculator", "inLanguage": "fr", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "Ajoutez des dépenses dans 28 devises et voyez le total dans la vôtre. Pour un voyage, des études à l'étranger, des achats à l'étranger ou des factures en devise. Gratuit, tout se passe dans votre navigateur.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "fr", "mainEntity": [{"@type": "Question", "name": "Quel taux est utilisé ?", "acceptedAnswer": {"@type": "Answer", "text": "Le taux de référence du jour pour chaque ligne. Dans l'app WorldTab, chaque dépense garde le taux du jour où elle a été faite : les totaux des mois passés ne bougent pas quand les taux changent."}}, {"@type": "Question", "name": "Mes saisies sont-elles enregistrées ou envoyées ?", "acceptedAnswer": {"@type": "Answer", "text": "Elles sont enregistrées uniquement dans ce navigateur et seront encore là la prochaine fois. Rien de ce que vous saisissez ne nous est envoyé, ni à personne."}}]}]}</script>
+</head>
+<body data-tool="calculator">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/fr/currency-converter">Convertisseur de devises</a><a href="/fr/spending-calculator" aria-current="page">Calculateur de dépenses</a></nav>
+    <label><span class="sr">Langue</span><select onchange="location.href=this.value"><option value="/spending-calculator">English</option><option value="/zh/spending-calculator">中文</option><option value="/ja/spending-calculator">日本語</option><option value="/ko/spending-calculator">한국어</option><option value="/fr/spending-calculator" selected>Français</option><option value="/de/spending-calculator">Deutsch</option><option value="/it/spending-calculator">Italiano</option><option value="/es/spending-calculator">Español</option></select></label>
+  </header>
+  <main>
+    <h1>Calculateur de dépenses multidevise</h1>
+    <p class="sub">Ajoutez ce que vous avez dépensé, dans n&#x27;importe quelle devise, et voyez le total dans la vôtre : un voyage, un semestre à l&#x27;étranger, des achats à l&#x27;étranger ou des factures en devise.</p>
+    <section class="card">
+      <label class="field home"><span>Total en</span><select id="wt-home"></select></label>
+      <div id="wt-rows" class="rows"></div>
+      <div class="row-actions"><button type="button" id="wt-add" class="btn add">+ Ajouter une dépense</button><button type="button" id="wt-clear" class="btn ghost">Tout effacer</button></div>
+      <div class="total-box"><span>Total</span><strong id="wt-total">—</strong><small id="wt-bycur"></small></div>
+      <div class="row-actions"><button type="button" id="wt-copy" class="btn">Copier le résumé</button></div>
+      <p class="local">Ce que vous saisissez reste dans ce navigateur et n&#x27;est envoyé nulle part.</p>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">Taux de référence : <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">Banque centrale européenne</a> via <a href="https://frankfurter.dev" rel="noopener">Frankfurter</a> ; TWD, AED et VND : <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>. Mis à jour une fois par jour.</p>
+    <section class="cta">
+      <h2>Faites-le automatiquement pour chaque dépense</h2>
+      <p>WorldTab est une app de budget gratuite pour iPhone et Android. Notez chaque dépense dans la devise payée : elle convertit tout dans votre devise et garde le taux du jour.</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>Télécharger</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>Télécharger</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Quel taux est utilisé ?</summary><p>Le taux de référence du jour pour chaque ligne. Dans l&#x27;app WorldTab, chaque dépense garde le taux du jour où elle a été faite : les totaux des mois passés ne bougent pas quand les taux changent.</p></details>
+      <details><summary>Mes saisies sont-elles enregistrées ou envoyées ?</summary><p>Elles sont enregistrées uniquement dans ce navigateur et seront encore là la prochaine fois. Rien de ce que vous saisissez ne nous est envoyé, ni à personne.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">Politique de confidentialité</a><a href="/terms.html">Conditions d&#x27;utilisation</a><a href="mailto:support@worldtab.app">Contact</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "EUR", "home_tag": "Votre devise", "asof": "Taux du {d}", "offline": "Impossible de charger les taux du jour : ces montants sont approximatifs.", "loading": "Chargement des taux du jour…", "amount_ph": "Montant", "cur_label": "Devise", "note_ph": "Pour quoi (facultatif)", "remove": "Supprimer", "by_cur": "Par devise", "total": "Total", "copy": "Copier le résumé", "copied": "Copié", "copy_footer": "Taux du {d} · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

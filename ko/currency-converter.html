@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>환율 계산기 — 금액 하나를 28개 통화로 한 번에 | WorldTab</title>
+  <meta name="description" content="무료 환율 계산기: 금액을 한 번 입력하면 28개 통화로 한꺼번에 환산해 보여 줘요. 환율은 매일 업데이트. 달러, 엔화, 유로, 위안 등.">
+  <link rel="canonical" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/currency-converter">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/currency-converter">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/ko/currency-converter">
+  <meta property="og:title" content="환율 계산기 — 금액 하나를 28개 통화로 한 번에 | WorldTab">
+  <meta property="og:description" content="무료 환율 계산기: 금액을 한 번 입력하면 28개 통화로 한꺼번에 환산해 보여 줘요. 환율은 매일 업데이트. 달러, 엔화, 유로, 위안 등.">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "환율 계산기", "url": "https://worldtab.app/ko/currency-converter", "inLanguage": "ko", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "무료 환율 계산기: 금액을 한 번 입력하면 28개 통화로 한꺼번에 환산해 보여 줘요. 환율은 매일 업데이트. 달러, 엔화, 유로, 위안 등.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "ko", "mainEntity": [{"@type": "Question", "name": "환율은 얼마나 최신인가요?", "acceptedAnswer": {"@type": "Answer", "text": "유럽중앙은행이 영업일마다 발표하는 기준환율이며, 위에 기준일이 표시돼요. 유럽중앙은행이 발표하지 않는 TWD, AED, VND는 ExchangeRate-API에서 가져오며 역시 매일 업데이트돼요. 실시간 시세는 아니에요."}}, {"@type": "Question", "name": "은행이나 카드 금액과 왜 다른가요?", "acceptedAnswer": {"@type": "Answer", "text": "은행과 카드사는 자체 환율을 쓰고 수수료를 붙이는 경우가 많아서, 명세서 금액이 기준환율과 조금 다를 수 있어요."}}, {"@type": "Question", "name": "여러 통화로 쓴 돈을 기록할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. WorldTab은 결제한 통화 그대로 지출을 기록하고, 모든 합계를 내 통화로 보여 줘요. 환율은 쓴 날의 것을 그대로 남겨요."}}]}]}</script>
+</head>
+<body data-tool="converter">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/ko/currency-converter" aria-current="page">환율 계산기</a><a href="/ko/spending-calculator">지출 합계 계산기</a></nav>
+    <label><span class="sr">언어</span><select onchange="location.href=this.value"><option value="/currency-converter">English</option><option value="/zh/currency-converter">中文</option><option value="/ja/currency-converter">日本語</option><option value="/ko/currency-converter" selected>한국어</option><option value="/fr/currency-converter">Français</option><option value="/de/currency-converter">Deutsch</option><option value="/it/currency-converter">Italiano</option><option value="/es/currency-converter">Español</option></select></label>
+  </header>
+  <main>
+    <h1>환율 계산기</h1>
+    <p class="sub">금액을 한 번 입력하면 28개 통화로 모두 환산해 보여 줘요.</p>
+    <section class="card">
+      <div class="conv-inputs">
+        <label class="field amount"><span>금액</span><input id="wt-amount" inputmode="decimal" autocomplete="off" value="100"></label>
+        <label class="field cur"><span>통화</span><select id="wt-from"></select></label>
+      </div>
+      <p class="hint">통화를 누르면 그 통화를 기준으로 바뀌어요.</p>
+      <div id="wt-list" class="list"></div>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">기준환율: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">유럽중앙은행</a>(<a href="https://frankfurter.dev" rel="noopener">Frankfurter</a> 경유), TWD·AED·VND는 <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>. 하루 한 번 업데이트.</p>
+    <section class="cta">
+      <h2>모든 지출을 자동으로 이렇게</h2>
+      <p>WorldTab은 iPhone과 Android용 무료 가계부 앱이에요. 결제한 통화 그대로 기록하면 모두 내 통화로 환산하고, 그날의 환율을 그대로 남겨요.</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>다운로드</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>다운로드</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>자주 묻는 질문</h2>
+      <details><summary>환율은 얼마나 최신인가요?</summary><p>유럽중앙은행이 영업일마다 발표하는 기준환율이며, 위에 기준일이 표시돼요. 유럽중앙은행이 발표하지 않는 TWD, AED, VND는 ExchangeRate-API에서 가져오며 역시 매일 업데이트돼요. 실시간 시세는 아니에요.</p></details>
+      <details><summary>은행이나 카드 금액과 왜 다른가요?</summary><p>은행과 카드사는 자체 환율을 쓰고 수수료를 붙이는 경우가 많아서, 명세서 금액이 기준환율과 조금 다를 수 있어요.</p></details>
+      <details><summary>여러 통화로 쓴 돈을 기록할 수 있나요?</summary><p>네. WorldTab은 결제한 통화 그대로 지출을 기록하고, 모든 합계를 내 통화로 보여 줘요. 환율은 쓴 날의 것을 그대로 남겨요.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">개인정보 처리방침</a><a href="/terms.html">이용약관</a><a href="mailto:support@worldtab.app">문의</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "KRW", "home_tag": "내 통화", "asof": "{d} 기준 환율", "offline": "오늘 환율을 불러오지 못해서 대략적인 금액이에요.", "loading": "오늘 환율을 불러오는 중…", "amount_ph": "금액", "cur_label": "통화", "note_ph": "내용 (선택)", "remove": "삭제", "by_cur": "통화별", "total": "합계", "copy": "요약 복사", "copied": "복사했어요", "copy_footer": "{d} 기준 환율 · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

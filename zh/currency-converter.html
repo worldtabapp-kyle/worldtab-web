@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>汇率换算器 — 一个金额，28 种货币一次换算 | WorldTab</title>
+  <meta name="description" content="免费汇率换算器：输入一次金额，同时看到 28 种货币的换算结果，汇率每日更新。美元、欧元、日元、韩元、港币等。">
+  <link rel="canonical" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/currency-converter">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/currency-converter">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/zh/currency-converter">
+  <meta property="og:title" content="汇率换算器 — 一个金额，28 种货币一次换算 | WorldTab">
+  <meta property="og:description" content="免费汇率换算器：输入一次金额，同时看到 28 种货币的换算结果，汇率每日更新。美元、欧元、日元、韩元、港币等。">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "汇率换算器", "url": "https://worldtab.app/zh/currency-converter", "inLanguage": "zh-Hans", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "免费汇率换算器：输入一次金额，同时看到 28 种货币的换算结果，汇率每日更新。美元、欧元、日元、韩元、港币等。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "zh-Hans", "mainEntity": [{"@type": "Question", "name": "汇率有多新？", "acceptedAnswer": {"@type": "Answer", "text": "这是欧洲央行每个工作日公布的参考汇率，上方显示的是汇率日期。欧洲央行不公布的新台币、阿联酋迪拉姆和越南盾来自 ExchangeRate-API，同样每天更新。不是实时行情。"}}, {"@type": "Question", "name": "为什么和银行、信用卡的金额不一样？", "acceptedAnswer": {"@type": "Answer", "text": "银行和卡组织用自己的汇率，通常还会加手续费，所以账单上的金额会和参考汇率略有出入。"}}, {"@type": "Question", "name": "能记录多种货币的花费吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。WorldTab 按你付款的币种记下每一笔，所有合计都换算成你的货币，并保留花钱那天的汇率。"}}]}]}</script>
+</head>
+<body data-tool="converter">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/zh/currency-converter" aria-current="page">汇率换算器</a><a href="/zh/spending-calculator">花费合计计算器</a></nav>
+    <label><span class="sr">语言</span><select onchange="location.href=this.value"><option value="/currency-converter">English</option><option value="/zh/currency-converter" selected>中文</option><option value="/ja/currency-converter">日本語</option><option value="/ko/currency-converter">한국어</option><option value="/fr/currency-converter">Français</option><option value="/de/currency-converter">Deutsch</option><option value="/it/currency-converter">Italiano</option><option value="/es/currency-converter">Español</option></select></label>
+  </header>
+  <main>
+    <h1>汇率换算器</h1>
+    <p class="sub">输入一次金额，同时换算成全部 28 种货币。</p>
+    <section class="card">
+      <div class="conv-inputs">
+        <label class="field amount"><span>金额</span><input id="wt-amount" inputmode="decimal" autocomplete="off" value="100"></label>
+        <label class="field cur"><span>货币</span><select id="wt-from"></select></label>
+      </div>
+      <p class="hint">点任意一种货币，就以它为基准换算。</p>
+      <div id="wt-list" class="list"></div>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">参考汇率：<a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">欧洲央行</a>（经 <a href="https://frankfurter.dev" rel="noopener">Frankfurter</a>）；新台币、阿联酋迪拉姆、越南盾来自 <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>。每天更新一次。</p>
+    <section class="cta">
+      <h2>每一笔花费，都自动这样换算</h2>
+      <p>WorldTab 是免费的 iPhone 和安卓记账 App。按付款的币种记下每一笔，它会把所有金额换算成你的货币，并保留当天的汇率。</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>下载</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>下载</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>常见问题</h2>
+      <details><summary>汇率有多新？</summary><p>这是欧洲央行每个工作日公布的参考汇率，上方显示的是汇率日期。欧洲央行不公布的新台币、阿联酋迪拉姆和越南盾来自 ExchangeRate-API，同样每天更新。不是实时行情。</p></details>
+      <details><summary>为什么和银行、信用卡的金额不一样？</summary><p>银行和卡组织用自己的汇率，通常还会加手续费，所以账单上的金额会和参考汇率略有出入。</p></details>
+      <details><summary>能记录多种货币的花费吗？</summary><p>可以。WorldTab 按你付款的币种记下每一笔，所有合计都换算成你的货币，并保留花钱那天的汇率。</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">隐私政策</a><a href="/terms.html">服务条款</a><a href="mailto:support@worldtab.app">联系我们</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "CNY", "home_tag": "你的货币", "asof": "汇率日期：{d}", "offline": "没能加载今天的汇率，以下金额是近似值。", "loading": "正在加载今天的汇率…", "amount_ph": "金额", "cur_label": "货币", "note_ph": "用途（可不填）", "remove": "删除", "by_cur": "按币种", "total": "合计", "copy": "复制汇总", "copied": "已复制", "copy_footer": "汇率日期 {d} · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

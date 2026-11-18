@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Währungsrechner: ein Betrag in 28 Währungen | WorldTab</title>
+  <meta name="description" content="Kostenloser Währungsrechner: Betrag einmal eingeben und in 28 Währungen sehen, mit täglich aktualisierten Kursen. EUR, USD, CHF, GBP, JPY und mehr.">
+  <link rel="canonical" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/currency-converter">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/currency-converter">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/de/currency-converter">
+  <meta property="og:title" content="Währungsrechner: ein Betrag in 28 Währungen | WorldTab">
+  <meta property="og:description" content="Kostenloser Währungsrechner: Betrag einmal eingeben und in 28 Währungen sehen, mit täglich aktualisierten Kursen. EUR, USD, CHF, GBP, JPY und mehr.">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Währungsrechner", "url": "https://worldtab.app/de/currency-converter", "inLanguage": "de", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "Kostenloser Währungsrechner: Betrag einmal eingeben und in 28 Währungen sehen, mit täglich aktualisierten Kursen. EUR, USD, CHF, GBP, JPY und mehr.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "de", "mainEntity": [{"@type": "Question", "name": "Wie aktuell sind die Kurse?", "acceptedAnswer": {"@type": "Answer", "text": "Es sind die Referenzkurse, die die Europäische Zentralbank an jedem Arbeitstag veröffentlicht; das Datum steht oben. TWD, AED und VND, die die EZB nicht veröffentlicht, kommen von ExchangeRate-API und werden ebenfalls täglich aktualisiert. Es sind keine Echtzeitkurse."}}, {"@type": "Question", "name": "Warum zeigt meine Bank einen anderen Betrag?", "acceptedAnswer": {"@type": "Answer", "text": "Banken und Kartennetzwerke nutzen eigene Kurse und schlagen oft Gebühren auf, daher kann der Betrag auf deiner Abrechnung leicht vom Referenzkurs abweichen."}}, {"@type": "Question", "name": "Kann ich Ausgaben in mehreren Währungen erfassen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. WorldTab speichert jede Ausgabe in der Währung, in der du bezahlt hast, und zeigt alle Summen in deiner Währung, mit dem Kurs vom Tag der Ausgabe."}}]}]}</script>
+</head>
+<body data-tool="converter">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/de/currency-converter" aria-current="page">Währungsrechner</a><a href="/de/spending-calculator">Ausgabenrechner</a></nav>
+    <label><span class="sr">Sprache</span><select onchange="location.href=this.value"><option value="/currency-converter">English</option><option value="/zh/currency-converter">中文</option><option value="/ja/currency-converter">日本語</option><option value="/ko/currency-converter">한국어</option><option value="/fr/currency-converter">Français</option><option value="/de/currency-converter" selected>Deutsch</option><option value="/it/currency-converter">Italiano</option><option value="/es/currency-converter">Español</option></select></label>
+  </header>
+  <main>
+    <h1>Währungsrechner</h1>
+    <p class="sub">Gib einen Betrag einmal ein und sieh ihn in allen 28 Währungen.</p>
+    <section class="card">
+      <div class="conv-inputs">
+        <label class="field amount"><span>Betrag</span><input id="wt-amount" inputmode="decimal" autocomplete="off" value="100"></label>
+        <label class="field cur"><span>Währung</span><select id="wt-from"></select></label>
+      </div>
+      <p class="hint">Tippe auf eine Währung, um von ihr aus umzurechnen.</p>
+      <div id="wt-list" class="list"></div>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">Referenzkurse: <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">Europäische Zentralbank</a> über <a href="https://frankfurter.dev" rel="noopener">Frankfurter</a>; TWD, AED und VND von <a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>. Einmal täglich aktualisiert.</p>
+    <section class="cta">
+      <h2>Mach das automatisch für jede Ausgabe</h2>
+      <p>WorldTab ist eine kostenlose Budget-App für iPhone und Android. Erfasse jede Ausgabe in der Währung, in der du bezahlt hast: Sie rechnet alles in deine Währung um und behält den Kurs vom jeweiligen Tag.</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>Laden im</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>Jetzt bei</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>Häufige Fragen</h2>
+      <details><summary>Wie aktuell sind die Kurse?</summary><p>Es sind die Referenzkurse, die die Europäische Zentralbank an jedem Arbeitstag veröffentlicht; das Datum steht oben. TWD, AED und VND, die die EZB nicht veröffentlicht, kommen von ExchangeRate-API und werden ebenfalls täglich aktualisiert. Es sind keine Echtzeitkurse.</p></details>
+      <details><summary>Warum zeigt meine Bank einen anderen Betrag?</summary><p>Banken und Kartennetzwerke nutzen eigene Kurse und schlagen oft Gebühren auf, daher kann der Betrag auf deiner Abrechnung leicht vom Referenzkurs abweichen.</p></details>
+      <details><summary>Kann ich Ausgaben in mehreren Währungen erfassen?</summary><p>Ja. WorldTab speichert jede Ausgabe in der Währung, in der du bezahlt hast, und zeigt alle Summen in deiner Währung, mit dem Kurs vom Tag der Ausgabe.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">Datenschutz</a><a href="/terms.html">Nutzungsbedingungen</a><a href="mailto:support@worldtab.app">Kontakt</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "EUR", "home_tag": "Deine Währung", "asof": "Kurse vom {d}", "offline": "Die heutigen Kurse konnten nicht geladen werden, daher sind die Beträge ungefähr.", "loading": "Heutige Kurse werden geladen…", "amount_ph": "Betrag", "cur_label": "Währung", "note_ph": "Wofür (optional)", "remove": "Entfernen", "by_cur": "Nach Währung", "total": "Summe", "copy": "Übersicht kopieren", "copied": "Kopiert", "copy_footer": "Kurse vom {d} · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>

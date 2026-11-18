@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>為替計算機 — 1つの金額を28通貨に一括換算 | WorldTab</title>
+  <meta name="description" content="無料の為替計算機。金額を一度入力するだけで28通貨に一括換算。為替レートは毎日更新。ドル、ユーロ、ウォン、人民元など。">
+  <link rel="canonical" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="en" href="https://worldtab.app/currency-converter">
+  <link rel="alternate" hreflang="zh-Hans" href="https://worldtab.app/zh/currency-converter">
+  <link rel="alternate" hreflang="ja" href="https://worldtab.app/ja/currency-converter">
+  <link rel="alternate" hreflang="ko" href="https://worldtab.app/ko/currency-converter">
+  <link rel="alternate" hreflang="fr" href="https://worldtab.app/fr/currency-converter">
+  <link rel="alternate" hreflang="de" href="https://worldtab.app/de/currency-converter">
+  <link rel="alternate" hreflang="it" href="https://worldtab.app/it/currency-converter">
+  <link rel="alternate" hreflang="es" href="https://worldtab.app/es/currency-converter">
+  <link rel="alternate" hreflang="x-default" href="https://worldtab.app/currency-converter">
+  <link rel="icon" href="/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worldtab.app/ja/currency-converter">
+  <meta property="og:title" content="為替計算機 — 1つの金額を28通貨に一括換算 | WorldTab">
+  <meta property="og:description" content="無料の為替計算機。金額を一度入力するだけで28通貨に一括換算。為替レートは毎日更新。ドル、ユーロ、ウォン、人民元など。">
+  <meta property="og:image" content="https://worldtab.app/feature-graphic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/tools.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "為替計算機", "url": "https://worldtab.app/ja/currency-converter", "inLanguage": "ja", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "description": "無料の為替計算機。金額を一度入力するだけで28通貨に一括換算。為替レートは毎日更新。ドル、ユーロ、ウォン、人民元など。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "WorldTab", "url": "https://worldtab.app/"}}, {"@type": "FAQPage", "inLanguage": "ja", "mainEntity": [{"@type": "Question", "name": "レートはどのくらい新しいですか？", "acceptedAnswer": {"@type": "Answer", "text": "欧州中央銀行が営業日ごとに公表する参照レートで、上に基準日を表示しています。欧州中央銀行が公表しないTWD・AED・VNDはExchangeRate-APIから取得し、こちらも毎日更新されます。リアルタイムの市場レートではありません。"}}, {"@type": "Question", "name": "銀行やカードの金額と違うのはなぜ？", "acceptedAnswer": {"@type": "Answer", "text": "銀行やカード会社は独自のレートを使い、手数料を上乗せすることが多いため、明細の金額は参照レートと少し異なる場合があります。"}}, {"@type": "Question", "name": "複数の通貨での支出を記録できますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。WorldTabは支払った通貨のまま支出を記録し、すべての合計をあなたの通貨で表示します。レートは使った日のものを残します。"}}]}]}</script>
+</head>
+<body data-tool="converter">
+  <header class="wt-top">
+    <a class="brand" href="/"><img src="/icon.png" alt="" width="28" height="28">WorldTab</a>
+    <nav><a href="/ja/currency-converter" aria-current="page">為替計算機</a><a href="/ja/spending-calculator">支出合計計算機</a></nav>
+    <label><span class="sr">言語</span><select onchange="location.href=this.value"><option value="/currency-converter">English</option><option value="/zh/currency-converter">中文</option><option value="/ja/currency-converter" selected>日本語</option><option value="/ko/currency-converter">한국어</option><option value="/fr/currency-converter">Français</option><option value="/de/currency-converter">Deutsch</option><option value="/it/currency-converter">Italiano</option><option value="/es/currency-converter">Español</option></select></label>
+  </header>
+  <main>
+    <h1>為替計算機</h1>
+    <p class="sub">金額を一度入力すると、28通貨すべてに換算して表示します。</p>
+    <section class="card">
+      <div class="conv-inputs">
+        <label class="field amount"><span>金額</span><input id="wt-amount" inputmode="decimal" autocomplete="off" value="100"></label>
+        <label class="field cur"><span>通貨</span><select id="wt-from"></select></label>
+      </div>
+      <p class="hint">通貨をタップすると、その通貨を基準に切り替わります。</p>
+      <div id="wt-list" class="list"></div>
+    </section>
+    <p class="status" id="wt-status" aria-live="polite"></p>
+    <p class="source">参照レート：<a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" rel="noopener">欧州中央銀行</a>（<a href="https://frankfurter.dev" rel="noopener">Frankfurter</a> 経由）、TWD・AED・VNDは<a href="https://www.exchangerate-api.com" rel="noopener">ExchangeRate-API</a>。1日1回更新。</p>
+    <section class="cta">
+      <h2>すべての支出を自動でこのように</h2>
+      <p>WorldTabはiPhone・Android向けの無料家計簿アプリです。支払った通貨のまま記録すると、すべてをあなたの通貨に換算し、その日のレートを残します。</p>
+      <div class="store-badges">
+        <a class="store-btn" href="https://apps.apple.com/app/id6794569884"><span class="icon">🍎</span><span class="text"><small>ダウンロード</small>App Store</span></a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.worldtabkyle.worldtab"><span class="icon">▶</span><span class="text"><small>ダウンロード</small>Google Play</span></a>
+      </div>
+    </section>
+    <section class="faq">
+      <h2>よくある質問</h2>
+      <details><summary>レートはどのくらい新しいですか？</summary><p>欧州中央銀行が営業日ごとに公表する参照レートで、上に基準日を表示しています。欧州中央銀行が公表しないTWD・AED・VNDはExchangeRate-APIから取得し、こちらも毎日更新されます。リアルタイムの市場レートではありません。</p></details>
+      <details><summary>銀行やカードの金額と違うのはなぜ？</summary><p>銀行やカード会社は独自のレートを使い、手数料を上乗せすることが多いため、明細の金額は参照レートと少し異なる場合があります。</p></details>
+      <details><summary>複数の通貨での支出を記録できますか？</summary><p>はい。WorldTabは支払った通貨のまま支出を記録し、すべての合計をあなたの通貨で表示します。レートは使った日のものを残します。</p></details>
+    </section>
+  </main>
+  <footer>
+    <p class="links"><a href="/privacy.html">プライバシーポリシー</a><a href="/terms.html">利用規約</a><a href="mailto:support@worldtab.app">お問い合わせ</a></p>
+    <p>© 2026 WorldTab</p>
+  </footer>
+  <noscript><p style="text-align:center;padding:16px">JavaScript is needed for this tool.</p></noscript>
+  <script id="wt-i18n" type="application/json">{"defaultCur": "JPY", "home_tag": "あなたの通貨", "asof": "{d} 時点のレート", "offline": "今日のレートを読み込めなかったため、おおよその金額です。", "loading": "今日のレートを読み込み中…", "amount_ph": "金額", "cur_label": "通貨", "note_ph": "内容（任意）", "remove": "削除", "by_cur": "通貨別", "total": "合計", "copy": "まとめをコピー", "copied": "コピーしました", "copy_footer": "{d} 時点のレート · worldtab.app"}</script>
+  <script src="/tools.js" defer></script>
+</body>
+</html>
